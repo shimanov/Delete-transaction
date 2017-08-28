@@ -7,8 +7,7 @@ namespace Transaction
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Введите номер зависшей транзакции (полностью): \t");
+            Console.WriteLine("Введите номер зависшей транзакции (полностью):");
             string posting = Console.ReadLine();
 
             Sql s = new Sql();
@@ -21,6 +20,7 @@ namespace Transaction
             {
                 s.DeletePosting(posting);
                 Console.WriteLine("Транзакция удалена");
+                Console.WriteLine("Для выхода нажмите на любую клавишу");
             }
             else
             {
