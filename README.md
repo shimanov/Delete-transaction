@@ -1,5 +1,6 @@
 # Delete Transaction 
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/shimanov/Delete-transaction.svg?branch=master)](https://travis-ci.org/shimanov/Delete-transaction)
 
 ## Утилита для поиска и удаления зависших транзакций 
