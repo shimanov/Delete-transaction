@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/shimanov/Delete-transaction.svg?branch=master)](https://travis-ci.org/shimanov/Delete-transaction)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0bdef06bc75c4fd1b01c5767dfe6d6ab)](https://www.codacy.com/app/shimanov/Delete-transaction?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shimanov/Delete-transaction&amp;utm_campaign=Badge_Grade)
 
 ## Утилита для поиска и удаления зависших транзакций 
 
