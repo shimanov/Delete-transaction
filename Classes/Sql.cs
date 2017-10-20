@@ -6,6 +6,10 @@ namespace Transaction.Classes
 {
     public class Sql
     {
+        private static SqlConnection connection = new SqlConnection("Server = localhost; "
+                                                         + "Initial Catalog = " + PcName() + ";"
+                                                         + "Integrated Security = SSPI");
+        
         private string PcName()
         {
             string namePc = Environment.MachineName.ToLower();
@@ -18,21 +22,13 @@ namespace Transaction.Classes
 
         public void SearchPosting(string posting)
         {
-            SqlConnection connection = new SqlConnection("Server = localhost; "
-                                                         + "Initial Catalog = " + PcName() + ";"
-                                                         + "Integrated Security = SSPI");
-
-            SqlCommand command = new SqlCommand
+            using(SqlCommand command = new SqlCommand(@"select * from RETAILTRANSACTIONTABLE where RECEIPTID ='" + posting + "'",connection))
             {
-                CommandText = "select * from RETAILTRANSACTIONTABLE where RECEIPTID ='" + posting + "'",
-                CommandType = CommandType.Text,
-                Connection = connection
-            };
-
             try
             {
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                using(SqlDataReader reader = command.ExecuteReader())
+                {
 
                 //выводим данные
                 while (reader.Read())
@@ -44,11 +40,11 @@ namespace Transaction.Classes
                     Console.WriteLine("Найдена проводка {0} на сумму {1}", receiptid, grossamount);
                     Console.ResetColor();
                 }
-                reader.Close();
+                }
                 //Logger.Log.Info("Успешно подключились к БД " + NamePc() + "для выполнения скрипта ReplicaExport");
                 command.CommandTimeout = 240;
                 command.ExecuteNonQuery();
-                connection.Close();
+            }
                 //Logger.Log.Info("Успешно выполнил скрипт ReplicaExport на БД " + NamePc() + "соединение закрыл");
             }
             catch (Exception exception)
