@@ -6,11 +6,7 @@ namespace Transaction.Classes
 {
     public class Sql
     {
-        private static SqlConnection connection = new SqlConnection("Server = localhost; "
-                                                         + "Initial Catalog = " + PcName() + ";"
-                                                         + "Integrated Security = SSPI");
-        
-        private string PcName()
+        public string PcName()
         {
             string namePc = Environment.MachineName.ToLower();
             string[] index = namePc.Split('-');
@@ -19,6 +15,10 @@ namespace Transaction.Classes
 
             return databaseName;
         }
+
+        private static SqlConnection connection = new SqlConnection("Server = localhost; "
+                                                         + "Initial Catalog = " + PcName() + ";"
+                                                         + "Integrated Security = SSPI");
 
         public void SearchPosting(string posting)
         {
@@ -45,12 +45,13 @@ namespace Transaction.Classes
                 command.CommandTimeout = 240;
                 command.ExecuteNonQuery();
             }
+                catch (Exception exception)
+                {
+                    //Logger.Log.Error(exception.Message);
+                }
                 //Logger.Log.Info("Успешно выполнил скрипт ReplicaExport на БД " + NamePc() + "соединение закрыл");
             }
-            catch (Exception exception)
-            {
-                //Logger.Log.Error(exception.Message);
-            }
+            
         }
 
         public void DeletePosting(string posting)

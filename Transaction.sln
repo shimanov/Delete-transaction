@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transaction", "Transaction.csproj", "{9C98564D-6373-4ED0-BA63-9D7ECD39E2DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteTransaction", "..\DeleteTransaction\DeleteTransaction.csproj", "{22A1A10E-0345-4294-B4F9-9AEB8BBAA0BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{9C98564D-6373-4ED0-BA63-9D7ECD39E2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C98564D-6373-4ED0-BA63-9D7ECD39E2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C98564D-6373-4ED0-BA63-9D7ECD39E2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A1A10E-0345-4294-B4F9-9AEB8BBAA0BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A1A10E-0345-4294-B4F9-9AEB8BBAA0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A1A10E-0345-4294-B4F9-9AEB8BBAA0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A1A10E-0345-4294-B4F9-9AEB8BBAA0BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {641FE56F-4011-45E1-BA73-67F9A17DD2B5}
 	EndGlobalSection
 EndGlobal
